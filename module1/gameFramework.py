@@ -28,7 +28,7 @@ class SpaceShooterGame (arcade.Window):
         arcade.set_background_color(arcade.color.BLACK)
 
         #Sets up the player.
-        self.player = arcade.Sprite("images/spaceship.png", SCALING)
+        self.player = arcade.Sprite("spaceship.png", SCALING)
         self.player.center_y = self.height / 2
         self.all_sprites.append(self.player)
 
