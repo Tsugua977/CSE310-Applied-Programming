@@ -104,20 +104,17 @@ class SpaceShooterGame (arcade.Window):
         self.bullet_list.update()
         self.enemy_list.update()
 
-        #If the player hits the left or right side of the screen,
-        #this updates the player's ship to stay inside.
+        #If the player hits the left or right side of the screen, this updates the player's ship to stay inside.
         if self.player.right > self.width:
             self.player.right = self.width
         if self.player.left < 0:
             self.player.left = 0
 
-        #When the bottom of the bullet leaves the top of the screen, 
-        #the bullet is removed from the bullet list.
+        #When the bottom of the bullet leaves the top of the screen, the bullet is removed from the bullet list.
         for bullet in self.bullet_list:
             if bullet.bottom > SCREEN_LENGTH:
                 bullet.remove_from_sprite_lists()
-            #If a bullet collides with an enemy, both the enemy
-            #and the bullet are removed from the list.
+            #If a bullet collides with an enemy, both the enemy and the bullet are removed from the list.
             if bullet.collides_with_list(self.enemy_list):
                 bullet.remove_from_sprite_lists()
                 self.enemy.remove_from_sprite_lists()
