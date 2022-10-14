@@ -9,7 +9,7 @@ I wanted to make a simple game in Java. This was to learn some basic knowledge o
 {Provide a link to your YouTube demonstration.  It should be a 4-5 minute demo of the software running and a walkthrough 
 of the code. Focus should be on sharing what you learned about the language syntax.}
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://youtu.be/InAjqmJ_yc8)
 
 # Development Environment
 
@@ -29,4 +29,4 @@ I used Java to program the Tic Tac Toe game. The libraries I used are java.util.
 # Future Work
 
 {Make a list of things that you need to fix, improve, and add in the future.}
-* Fix the tie conditions.
+* Fix the tie condition.
