@@ -4,9 +4,7 @@ import javax.print.DocFlavor.STRING;
 
 public class ticTaceToeNew {
 
-    static String[] boardArray = {"1","2","3","4","5","6","7","8","9"};
-    
-    static void printBoard() 
+    static void printBoard(String[] boardArray) 
     {
         System.out.println("| " + boardArray[0] + " | " + boardArray[1] + " | " + boardArray[2] + " |");
         System.out.println("| - | - | - |");
@@ -16,9 +14,11 @@ public class ticTaceToeNew {
     }
         
     public static void main(String[] args) throws Exception {
-            
+        
+        String[] boardArray = {"1","2","3","4","5","6","7","8","9"};
+
         String winner = "none";
-        printBoard();
+        printBoard(boardArray);
         while (winner == "none"){
             
 
@@ -28,20 +28,9 @@ public class ticTaceToeNew {
             int boardSpot = player1.nextInt();
             boardSpot -= 1;
 
-            
-            //int[] boardInt = Arrays.stream(boardArray).mapToInt(Integer::parseInt).toArray();
-
-            //int index = Arrays.binarySearch(boardInt, boardSpot);
-
-            //if (index < 0)
-            //{
-            //System.out.println("found it");
-            //}else {
-                //System.out.println("not in array");
-            //}
             String boardSpotStr = String.valueOf(boardSpot);
             for (int i = 0; i < boardArray.length ; i++) {
-            if (boardSpotStr == boardArray[i]){
+            if (boardSpotStr.equals(boardArray[i]) ){
                 System.out.println("Found it.");
                 break;
             }else{
@@ -59,7 +48,7 @@ public class ticTaceToeNew {
             
             placementXO(boardArray, computerPos, "computer");
 
-            printBoard();
+            printBoard(boardArray);
         }
     }
 
@@ -102,3 +91,14 @@ public class ticTaceToeNew {
         }
     }
 }
+
+//int[] boardInt = Arrays.stream(boardArray).mapToInt(Integer::parseInt).toArray();
+
+            //int index = Arrays.binarySearch(boardInt, boardSpot);
+
+            //if (index < 0)
+            //{
+            //System.out.println("found it");
+            //}else {
+                //System.out.println("not in array");
+            //}
