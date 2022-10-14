@@ -26,23 +26,28 @@ public class ticTaceToeNew {
         int boardSpot = player1.nextInt();
         boardSpot -= 1;
 
-        //if (boardSpot == boardArray[i])
-        //{
-        //System.out.println("found it");
-        //break;
-        //}else {
-            //System.out.println("not in array");
-        //}
-        
+        int[] boardInt = Arrays.stream(boardArray).mapToInt(Integer::parseInt).toArray();
+
+        int index = Arrays.binarySearch(boardInt, boardSpot);
+
+        //String checkSpot = String.valueOf(index);
+
+        if (index < 0)
+        {
+        System.out.println("found it");
+        }else {
+            System.out.println("not in array");
+        }
+
         int playerPos = boardSpot;
 
         placementXO(boardArray, playerPos, "user");
         
-        //Random randNum = new Random();
-        //int computerPos = randNum.nextInt(9);
-        //computerPos -= 1;
+        Random randNum = new Random();
+        int computerPos = randNum.nextInt(9);
+        computerPos -= 1;
         
-        //placementXO(args, computerPos, "computer");
+        placementXO(args, computerPos, "computer");
 
         printBoard();
     }
