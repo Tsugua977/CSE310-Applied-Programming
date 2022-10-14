@@ -1,42 +1,88 @@
 import java.util.*;
+import java.util.random.*;
+import javax.print.DocFlavor.STRING;
 
 public class ticTaceToeNew {
 
-    public class Tic_Tac_Toe {
-
-        //char[] [] boardArray = new char [3] [3];
-        static int boardArray[] = {1,2,3,4,5,6,7,8,9};
+    static String[] boardArray = {"1","2","3","4","5","6","7","8","9"};
     
-        static void printBoard() 
-        {
-            System.out.println("| " + boardArray[0] + " | " + boardArray[1] + " | " + boardArray[2] + " |");
-            System.out.println("| - | - | - |");
-            System.out.println("| " + boardArray[3] + " | " + boardArray[4] + " | " + boardArray[5] + " |");
-            System.out.println("| - | - | - |");
-            System.out.println("| " + boardArray[6] + " | " + boardArray[7] + " | " + boardArray[8] + " |");
-        }
+    static void printBoard() 
+    {
+        System.out.println("| " + boardArray[0] + " | " + boardArray[1] + " | " + boardArray[2] + " |");
+        System.out.println("| - | - | - |");
+        System.out.println("| " + boardArray[3] + " | " + boardArray[4] + " | " + boardArray[5] + " |");
+        System.out.println("| - | - | - |");
+        System.out.println("| " + boardArray[6] + " | " + boardArray[7] + " | " + boardArray[8] + " |");
+    }
         
-        public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception {
             
-            String winner = null;
-            printBoard();
+        String winner = null;
+        printBoard();
 
+        Scanner player1 = new Scanner(System.in);
+        System.out.println("Pick a number from 1-9 to place your X:");
 
-            Scanner player1 = new Scanner(System.in);
-            System.out.println("Pick a number from 1-9 to place your X:");
+        int boardSpot = player1.nextInt();
+        boardSpot -= 1;
 
-            int boardSpot = player1.nextInt();
-            for (int i=0;i < boardArray.length ; i++)
-            {
-            if (boardSpot == boardArray[i])
-            {
-            System.out.println("found it");
-            break;
-            }else {
-                System.out.println("not in array");
-            }
-            }
+        //if (boardSpot == boardArray[i])
+        //{
+        //System.out.println("found it");
+        //break;
+        //}else {
+            //System.out.println("not in array");
+        //}
+        
+        int playerPos = boardSpot;
 
+        placementXO(boardArray, playerPos, "user");
+        
+        //Random randNum = new Random();
+        //int computerPos = randNum.nextInt(9);
+        //computerPos -= 1;
+        
+        //placementXO(args, computerPos, "computer");
+
+        printBoard();
+    }
+
+    public static void placementXO(String[] boardArray, int pos, String player){
+        String symbol = "X";
+        if (player == "user"){
+            symbol = "X";
+        } else if (player == "computer"){
+            symbol = "O";
+        }
+
+        switch (pos) {
+            case 0:
+                boardArray[0] = symbol;
+                break;
+            case 1:
+                boardArray[1] = symbol;
+                break;
+            case 2:
+                boardArray[2] = symbol;
+                break;
+            case 3:
+                boardArray[3] = symbol;
+                break;
+            case 4:
+                boardArray[4] = symbol;
+                break;
+            case 5:
+                boardArray[5] = symbol;
+                break;
+            case 6:
+                boardArray[6] = symbol;
+                break;
+            case 7:
+                boardArray[7] = symbol;
+                break;
+            case 8:
+                boardArray[8] = symbol;
+                break;
         }
     }
 }
