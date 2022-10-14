@@ -17,39 +17,50 @@ public class ticTaceToeNew {
         
     public static void main(String[] args) throws Exception {
             
-        String winner = null;
+        String winner = "none";
         printBoard();
+        while (winner == "none"){
+            
 
-        Scanner player1 = new Scanner(System.in);
-        System.out.println("Pick a number from 1-9 to place your X:");
+            Scanner player1 = new Scanner(System.in);
+            System.out.println("Pick a number from 1-9 to place your X:");
 
-        int boardSpot = player1.nextInt();
-        boardSpot -= 1;
+            int boardSpot = player1.nextInt();
+            boardSpot -= 1;
 
-        int[] boardInt = Arrays.stream(boardArray).mapToInt(Integer::parseInt).toArray();
+            
+            //int[] boardInt = Arrays.stream(boardArray).mapToInt(Integer::parseInt).toArray();
 
-        int index = Arrays.binarySearch(boardInt, boardSpot);
+            //int index = Arrays.binarySearch(boardInt, boardSpot);
 
-        //String checkSpot = String.valueOf(index);
+            //if (index < 0)
+            //{
+            //System.out.println("found it");
+            //}else {
+                //System.out.println("not in array");
+            //}
+            String boardSpotStr = String.valueOf(boardSpot);
+            for (int i = 0; i < boardArray.length ; i++) {
+            if (boardSpotStr == boardArray[i]){
+                System.out.println("Found it.");
+                break;
+            }else{
+                System.out.println("Not found.");
+            }
+            }
 
-        if (index < 0)
-        {
-        System.out.println("found it");
-        }else {
-            System.out.println("not in array");
+            int playerPos = boardSpot;
+
+            placementXO(boardArray, playerPos, "user");
+            
+            Random randNum = new Random();
+            int computerPos = randNum.nextInt(9);
+            computerPos -= 1;
+            
+            placementXO(boardArray, computerPos, "computer");
+
+            printBoard();
         }
-
-        int playerPos = boardSpot;
-
-        placementXO(boardArray, playerPos, "user");
-        
-        Random randNum = new Random();
-        int computerPos = randNum.nextInt(9);
-        computerPos -= 1;
-        
-        placementXO(args, computerPos, "computer");
-
-        printBoard();
     }
 
     public static void placementXO(String[] boardArray, int pos, String player){
