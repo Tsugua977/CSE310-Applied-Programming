@@ -10,7 +10,7 @@ was built to remind myself of the basics of Python.
 
 {Provide a link to your YouTube demonstration.  It should be a 4-5 minute demo of the game being played and a walkthrough of the code.}
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://youtu.be/2eGtjT5iod4)
 
 # Development Environment
 
