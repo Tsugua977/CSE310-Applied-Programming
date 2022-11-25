@@ -24,19 +24,19 @@ position = Vector2( 128, 160 )
 position = Vector2( 144, 160 )
 
 [node name="Block7" parent="." instance=ExtResource( 1 )]
-position = Vector2( 160, 144 )
+position = Vector2( 176, 160 )
 
 [node name="Block8" parent="." instance=ExtResource( 1 )]
 position = Vector2( 160, 160 )
 
 [node name="Block9" parent="." instance=ExtResource( 1 )]
-position = Vector2( 160, 128 )
+position = Vector2( 96, 160 )
 
 [node name="Block10" parent="." instance=ExtResource( 1 )]
-position = Vector2( 176, 128 )
+position = Vector2( 192, 160 )
 
 [node name="Block11" parent="." instance=ExtResource( 1 )]
-position = Vector2( 192, 128 )
+position = Vector2( 208, 160 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 56, 128 )
+position = Vector2( 56, 72 )
